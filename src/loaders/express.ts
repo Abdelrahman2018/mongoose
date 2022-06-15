@@ -5,6 +5,7 @@ import compression from "compression";
 import routes from "../routes";
 import multer from "multer";
 import logger from "morgan";
+import  connectBusboy from "connect-busboy";
 
 type Props = { app: Application };
 const expressLoader = async ({ app }: Props) => {
@@ -20,8 +21,9 @@ const expressLoader = async ({ app }: Props) => {
   app.use(multer().any());
   //#endregion
   app.use(logger("dev"))
+  app.use('/posts', connectBusboy({immediate: true}))
 
-  app.use("/api/v1", routes);
+  app.use("/", routes);
   // app.use(ErrorHandler); TODO: our own error handler
   //#endregion
 };
