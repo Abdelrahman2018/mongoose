@@ -7,7 +7,8 @@
     "start": "nodemon src/server.ts",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
     "dev:test": "cross-env NODE_ENV=test nodemon src/server.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "test": "jasmine"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "@types/nodemailer": "^6.4.4",
     "@types/sequelize": "^4.27.27",
     "@types/uuid": "^8.3.0",
+    "jasmine": "^4.2.0",
     "nodemon": "^2.0.7",
     "sequelize-cli": "^6.4.1",
     "ts-node": "^8.0.2",
